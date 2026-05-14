@@ -1,0 +1,174 @@
+TextWindow.ForegroundColor = "blue"
+TextWindow.WriteLine("Jeremy Cade")
+TextWindow.WriteLine("4to Baco B")
+TextWindow.ForegroundColor = "red"
+
+GraphicsWindow.BackgroundColor = "white"
+GraphicsWindow.Width = 350
+GraphicsWindow.Height = 490
+GraphicsWindow.CanResize = "no"
+
+GraphicsWindow.PenColor = "Black" 
+GraphicsWindow.PenWidth = 2       
+GraphicsWindow.DrawRectangle(15, 15, 320, 470)
+
+GraphicsWindow.BrushColor = "White"
+GraphicsWindow.DrawText(40, 20, "CASIO")
+GraphicsWindow.FontSize = 10
+GraphicsWindow.DrawText(240, 20, "fx-570LA X")
+
+GraphicsWindow.BrushColor = "Green" 
+GraphicsWindow.FillRectangle(40, 50, 270, 80)
+GraphicsWindow.PenColor = "Black"
+GraphicsWindow.DrawRectangle(40, 50, 270, 80)
+caja = Controls.AddTextBox(50, 75)
+Controls.SetSize(caja, 250, 30)
+
+GraphicsWindow.FontSize = 9
+GraphicsWindow.BrushColor = "White"
+
+
+Controls.ButtonClicked = boton
+botonShift = Controls.AddButton("SHIFT", 40, 150)
+Controls.SetSize(botonShift, 45, 25)
+botonAlpha = Controls.AddButton("ALPHA", 95, 150)
+Controls.SetSize(botonAlpha, 45, 25)
+
+GraphicsWindow.DrawEllipse(155, 145, 50, 50)
+
+botonMenu = Controls.AddButton("MENU", 220, 150)
+Controls.SetSize(botonMenu, 45, 25)
+botonOn = Controls.AddButton("ON", 270, 150)
+Controls.SetSize(botonOn, 45, 25)
+
+fx1 = Controls.AddButton("f(x)", 40, 200)
+Controls.SetSize(fx1, 40, 22)
+fx2 = Controls.AddButton("f(x)", 85, 200)
+Controls.SetSize(fx2, 40, 22)
+fx3 = Controls.AddButton("f(x)", 130, 200)
+Controls.SetSize(fx3, 40, 22)
+fx4 = Controls.AddButton("f(x)", 180, 200)
+Controls.SetSize(fx4, 40, 22)
+fx5 = Controls.AddButton("f(x)", 225, 200)
+Controls.SetSize(fx5, 40, 22)
+fx6 = Controls.AddButton("f(x)", 270, 200)
+Controls.SetSize(fx6, 40, 22)
+
+siete = Controls.AddButton("7", 40, 250)
+Controls.SetSize(siete, 50, 40)
+ocho = Controls.AddButton("8", 100, 250)
+Controls.SetSize(ocho, 50, 40)
+nueve = Controls.AddButton("9", 160, 250)
+Controls.SetSize(nueve, 50, 40)
+
+cuatro = Controls.AddButton("4", 40, 300)
+Controls.SetSize(cuatro, 50, 40)
+cinco = Controls.AddButton("5", 100, 300)
+Controls.SetSize(cinco, 50, 40)
+seis = Controls.AddButton("6", 160, 300)
+Controls.SetSize(seis, 50, 40)
+
+uno = Controls.AddButton("1", 40, 350)
+Controls.SetSize(uno, 50, 40)
+dos = Controls.AddButton("2", 100, 350)
+Controls.SetSize(dos, 50, 40)
+tres = Controls.AddButton("3", 160, 350)
+Controls.SetSize(tres, 50, 40)
+
+GraphicsWindow.BrushColor = "Orange"
+botonDEL = Controls.AddButton("DEL", 280, 250)
+Controls.SetSize(botonDEL, 50, 40)
+botonAC = Controls.AddButton("AC", 280, 300)
+Controls.SetSize(botonAC, 50, 40)
+Controls.SetSize(botonAC, 50, 40)
+cero = Controls.AddButton("0", 40, 400)
+Controls.SetSize(cero, 50, 40)
+
+botonPunto = Controls.AddButton(".", 100, 440)
+Controls.SetSize(botonPunto, 50, 40)
+botonExp = Controls.AddButton("x10^x", 160, 440)
+Controls.SetSize(botonExp, 50, 40)
+botonAns = Controls.AddButton("Ans", 220, 440)
+Controls.SetSize(botonAns, 50, 40)
+
+
+limpiar = Controls.AddButton("C", 100, 400)
+Controls.SetSize(limpiar, 50, 40)
+igual = Controls.AddButton("=", 160, 400)
+Controls.SetSize(igual, 50, 40)
+dividir = Controls.AddButton("/", 220, 250)
+Controls.SetSize(dividir, 50, 40)
+multiplicar = Controls.AddButton("*", 220, 300)
+Controls.SetSize(multiplicar, 50, 40)
+restar = Controls.AddButton("-", 220, 350)
+Controls.SetSize(restar, 50, 40)
+sumar = Controls.AddButton("+", 220, 400)
+Controls.SetSize(sumar, 50, 40)
+
+operadorSuma = 0
+operadorResta = 0
+operadorMultiplica = 0
+operadorDivide = 0 
+
+Sub boton 
+  ultimo_boton = Controls.LastClickedButton
+  If ultimo_boton = uno Then 
+    clic_uno()
+  ElseIf ultimo_boton = dos Then 
+    clic_dos()
+  ElseIf ultimo_boton = tres Then 
+    clic_tres()
+  ElseIf ultimo_boton = cuatro Then 
+    clic_cuatro()
+  ElseIf ultimo_boton = cinco Then 
+    clic_cinco()
+  ElseIf ultimo_boton = seis Then 
+    clic_seis()
+  ElseIf ultimo_boton = siete Then 
+    clic_siete()
+  ElseIf ultimo_boton = ocho Then 
+    clic_ocho()
+  ElseIf ultimo_boton = nueve Then 
+    clic_nueve()
+  ElseIf ultimo_boton = cero Then 
+    clic_cero()
+  ElseIf ultimo_boton = limpiar Or ultimo_boton = botonAC Then
+    botonlimpiar()
+  EndIf 
+EndSub
+
+Sub clic_uno
+  Controls.SetTextBoxText(caja, Text.Append(Controls.GetTextBoxText(caja), "1"))
+EndSub
+Sub clic_dos
+  Controls.SetTextBoxText(caja, Text.Append(Controls.GetTextBoxText(caja), "2"))
+EndSub
+Sub clic_tres
+  Controls.SetTextBoxText(caja, Text.Append(Controls.GetTextBoxText(caja), "3"))
+EndSub
+Sub clic_cuatro
+  Controls.SetTextBoxText(caja, Text.Append(Controls.GetTextBoxText(caja), "4"))
+EndSub
+Sub clic_cinco
+  Controls.SetTextBoxText(caja, Text.Append(Controls.GetTextBoxText(caja), "5"))
+EndSub
+Sub clic_seis
+  Controls.SetTextBoxText(caja, Text.Append(Controls.GetTextBoxText(caja), "6"))
+EndSub
+Sub clic_siete
+  Controls.SetTextBoxText(caja, Text.Append(Controls.GetTextBoxText(caja), "7"))
+EndSub
+Sub clic_ocho
+  Controls.SetTextBoxText(caja, Text.Append(Controls.GetTextBoxText(caja), "8"))
+EndSub
+Sub clic_nueve
+  Controls.SetTextBoxText(caja, Text.Append(Controls.GetTextBoxText(caja), "9"))
+EndSub
+Sub clic_cero
+  Controls.SetTextBoxText(caja, Text.Append(Controls.GetTextBoxText(caja), "0"))
+EndSub
+
+Sub botonlimpiar 
+  Controls.SetTextBoxText(caja,"")
+EndSub
+
